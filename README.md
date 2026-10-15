@@ -1,6 +1,13 @@
 # Audit d'exposition et de posture cloud
 
-**Nmap · OWASP ZAP · Prowler (CSPM) · LocalStack · Docker**
+![Nmap](https://img.shields.io/badge/Nmap-reconnaissance-4682B4?style=for-the-badge)
+![OWASP ZAP](https://img.shields.io/badge/OWASP_ZAP-scan_web-00549E?style=for-the-badge)
+![Prowler](https://img.shields.io/badge/Prowler-CSPM-7B2CBF?style=for-the-badge)
+![LocalStack](https://img.shields.io/badge/LocalStack-AWS_local-4D4D4D?style=for-the-badge)
+![Docker](https://img.shields.io/badge/Docker-conteneurs-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![AWS CLI](https://img.shields.io/badge/AWS_CLI-v2-FF9900?style=for-the-badge)
+![PowerShell](https://img.shields.io/badge/PowerShell-scripts-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
+![Juice Shop](https://img.shields.io/badge/Juice_Shop-cible_de_test-F5A623?style=for-the-badge)
 
 Cartographier une surface d'attaque, auditer une application web vulnérable et évaluer la posture de sécurité d'un environnement AWS émulé, puis transformer chaque résultat en décision : ce qu'un **analyste SOC** surveillerait, ce qu'un **architecte sécurité** corrigerait.
 
@@ -20,6 +27,19 @@ Cartographier une surface d'attaque, auditer une application web vulnérable et 
 - **Application web :** 11 alertes ZAP (0 High, 2 Medium, 5 Low, 4 Info) : CSP absente, CORS trop permissif, fonction Angular qui contourne le filtrage XSS.
 - **Posture cloud :** 42 résultats Prowler sur S3 et IAM en 24 s : 22 PASS, 20 FAIL (1 High, 11 Medium, 8 Low). Aucune exposition publique du bucket ; les écarts portent sur l'hygiène des identités, la résilience des données et la détection.
 - **Enseignement :** un scanner mesure la conformité, pas le risque. Chaque résultat se qualifie avec son contexte : exposition réelle, sensibilité de la donnée, contrôles compensatoires.
+
+## Stack technique
+
+| | Outil | Rôle dans le projet | Ce que cela démontre |
+|---|---|---|---|
+| 🔎 | **Nmap** | Découverte des ports et détection des versions de services | Reconnaissance, lecture de l'exposition réseau |
+| 🕷️ | **OWASP ZAP 2.17.0** | Scan baseline passif de l'application web | Analyse applicative, priorisation des alertes |
+| ☁️ | **Prowler 5.45.0** | Audit de posture (CSPM) sur S3 et IAM | Sécurité cloud, correspondance CIS, NIST, ISO 27001 |
+| 🧪 | **LocalStack** | Émulation AWS locale (S3, IAM, STS) | Laboratoire cloud sans coût ni risque |
+| 🧃 | **OWASP Juice Shop** | Cible web volontairement vulnérable | Test sur cible autorisée uniquement |
+| 🐳 | **Docker** | Conteneurisation des cibles et des outils | Isolation, reproductibilité |
+| ⌨️ | **AWS CLI v2** | Pilotage et audit manuel de S3 et IAM | Audit scriptable, automatisation |
+| 💻 | **PowerShell** | Orchestration sous Windows | Scripts, administration système |
 
 ## Périmètre et règles d'engagement
 
