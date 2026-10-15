@@ -126,7 +126,6 @@ docker run --rm -it -v ${PWD}:/home/prowler/output `
   prowlercloud/prowler:stable aws --services s3 iam
 ```
 
-![Audit manuel S3 et IAM](docs/images/09-audit-manuel-s3-iam.png)
 ![Exécution de Prowler](docs/images/10-prowler-execution.png)
 ![Rapport Prowler](docs/images/11-prowler-rapport.png)
 
