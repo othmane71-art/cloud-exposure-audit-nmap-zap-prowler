@@ -11,6 +11,8 @@
 
 Cartographier une surface d'attaque, auditer une application web vulnérable et évaluer la posture de sécurité d'un environnement AWS émulé, puis transformer chaque résultat en décision : ce qu'un **analyste SOC** surveillerait, ce qu'un **architecte sécurité** corrigerait.
 
+![Architecture du laboratoire d'audit : poste hôte, Docker (LocalStack, Juice Shop, ZAP, Prowler), cible publique autorisée et résultats clés](docs/images/architecture-audit-cloud.png)
+
 ## En bref
 
 | | |
@@ -47,6 +49,11 @@ Les scans ne sont lancés que sur des cibles dont je suis propriétaire ou dont 
 
 ## Architecture du laboratoire
 
+Le schéma en tête de page résume les flux et les résultats. La version texte ci-dessous est équivalente.
+
+<details>
+<summary>Voir la version texte</summary>
+
 ```text
 Poste hôte Windows (PowerShell, Nmap, AWS CLI)
 │
@@ -58,6 +65,8 @@ Poste hôte Windows (PowerShell, Nmap, AWS CLI)
 │
 └── Cible publique autorisée : scanme.nmap.org
 ```
+
+</details>
 
 ## Méthodologie et résultats
 
